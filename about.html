@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Rachelle Miller, LICSW | Wellness NW</title>
+  <meta name="description" content="Rachelle Miller is a Licensed Independent Clinical Social Worker and Certified IFS Therapist in Spokane Valley, WA. Learn about her background, training, and approach." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f2efe8;
+      --cream-dark: #e8e4db;
+      --teal: #2e7d78;
+      --teal-dark: #1f5a56;
+      --teal-light: #4a9e99;
+      --text: #2c2c2a;
+      --text-muted: #6b6860;
+      --white: #fafaf8;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(242, 239, 232, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(44, 44, 42, 0.08);
+      padding: 0 2rem;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--teal-dark);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    .nav-cta {
+      font-size: 0.85rem !important;
+      font-weight: 500 !important;
+      color: var(--white) !important;
+      background: var(--teal);
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      text-transform: none !important;
+      letter-spacing: 0 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--teal-dark) !important; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text);
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 140px 2rem 5rem;
+      background: var(--white);
+      border-bottom: 1px solid rgba(44,44,42,0.06);
+    }
+
+    .page-header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .page-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    .page-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 500;
+      color: var(--teal-dark);
+      line-height: 1.1;
+      max-width: 700px;
+    }
+
+    /* MAIN CONTENT */
+    .about-section {
+      padding: 5rem 2rem;
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-body p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-body p:last-child { margin-bottom: 0; }
+
+    .about-body h2 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--teal-dark);
+      margin: 2.5rem 0 1rem;
+      line-height: 1.2;
+    }
+
+    /* SIDEBAR */
+    .about-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .sidebar-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(44,44,42,0.06);
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-card-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--teal-dark);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(44,44,42,0.08);
+    }
+
+    .credential-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .credential-list li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .credential-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--teal-light);
+    }
+
+    .sidebar-cta {
+      background: var(--teal-dark);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .sidebar-cta p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--white);
+      color: var(--teal-dark);
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.75rem 1.75rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+
+    /* PHILOSOPHY SECTION */
+    .philosophy {
+      background: var(--white);
+      padding: 5rem 2rem;
+    }
+
+    .philosophy-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 500;
+      color: var(--teal-dark);
+      line-height: 1.15;
+      margin-bottom: 3rem;
+      max-width: 600px;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .philosophy-item {
+      border-left: 2px solid var(--teal-light);
+      padding: 0.25rem 0 0.25rem 1.5rem;
+    }
+
+    .philosophy-item-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--teal-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .philosophy-item-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--cream-dark);
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(44,44,42,0.08);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--teal-dark);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--teal); }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(44,44,42,0.08);
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .about-sidebar { position: static; }
+      .philosophy-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        padding: 1.5rem 2rem;
+        gap: 1.25rem;
+        border-bottom: 1px solid rgba(44,44,42,0.08);
+        z-index: 99;
+      }
+      .nav-toggle { display: flex; }
+      .footer-inner { flex-direction: column; gap: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .page-header { padding: 120px 1.25rem 3rem; }
+      .about-section, .philosophy { padding: 3.5rem 1.25rem; }
+      nav { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo">Wellness NW</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/rates.html">Rates</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="https://rachellemiller.clientsecure.me" target="_blank" rel="noopener" class="nav-cta">Schedule a consultation</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-label">About</p>
+    <h1>A therapist who has done her own work — and keeps doing it.</h1>
+  </div>
+</div>
+
+<section class="about-section">
+  <div class="about-inner">
+    <div class="about-body">
+      <p>I grew up in Spokane and have spent most of my life in this community. Before I was a therapist in private practice, I spent years in child welfare, adoptions, and systems-level work — quality assurance, training, accreditation leadership. I know what it looks like when institutions fail people. I also know what it looks like when people carry that failure quietly, convinced it says something about them.</p>
+
+      <p>That background shaped the kind of therapist I became. I'm drawn to clients who are high-functioning on the outside and exhausted on the inside — people who have insight, who work hard, who often know exactly what their patterns are and still can't seem to shift them. That gap between understanding and change is where I live.</p>
+
+      <h2>Why IFS</h2>
+
+      <p>I've trained in a number of modalities over the years. IFS is the one I kept returning to, and eventually committed to fully. It's not because it's trendy — it's because it works in a way that other approaches don't quite reach. IFS doesn't ask you to override your difficult parts or replace them with better thinking. It asks you to get curious about them. To understand what they've been protecting. To create the conditions where they don't have to work so hard anymore.</p>
+
+      <p>I'm a Level 3 trained, Certified IFS Therapist. I've also worked as a Program Assistant for IFS trainings, which means I've had the opportunity to support other therapists learning this model — and in doing so, deepen my own relationship with it.</p>
+
+      <p>I integrate EMDR for processing specific traumatic memories when that's what the work calls for, and I bring motivational interviewing into sessions where ambivalence is part of what we're navigating.</p>
+
+      <h2>Who I am outside the office</h2>
+
+      <p>I work with a significant number of neurodivergent clients — particularly adults with ADHD, autism, or high sensitivity — and have developed particular fluency with the ways standard systems and approaches can miss the mark for people whose minds work differently. I don't treat neurology as a problem to be corrected.</p>
+
+      <p>I'm also a community advocate. I've worked alongside state legislators and parent groups on special education policy, and I care deeply about what happens when families encounter systems that are supposed to help them but don't. That work and my clinical work feed each other more than you might expect.</p>
+
+      <p>I hold a Master's degree in Social Work from Eastern Washington University and a Bachelor's in Social Work from the University of Montana. I am licensed as an Independent Clinical Social Worker (LICSW) in Washington State.</p>
+    </div>
+
+    <aside class="about-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Credentials & training</div>
+        <ul class="credential-list">
+          <li>Licensed Independent Clinical Social Worker (LICSW), Washington State</li>
+          <li>Certified IFS Therapist, IFS Institute</li>
+          <li>Level 3 IFS Training</li>
+          <li>IFS Program Assistant</li>
+          <li>EMDR trained</li>
+          <li>MSW, Eastern Washington University</li>
+          <li>BSW, University of Montana</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Areas of focus</div>
+        <ul class="credential-list">
+          <li>Trauma and complex PTSD</li>
+          <li>Burnout and high-functioning exhaustion</li>
+          <li>Family-of-origin and generational patterns</li>
+          <li>ADHD and neurodivergence</li>
+          <li>Grief and loss</li>
+          <li>Relational and vocational transitions</li>
+          <li>Recovery support</li>
+          <li>Professional consultation</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-cta">
+        <p>Free 20-minute consultation to see if we're a good fit.</p>
+        <a href="https://rachellemiller.clientsecure.me" target="_blank" rel="noopener" class="btn-primary">Schedule a consultation</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div class="philosophy-inner">
+    <p class="section-label">How I work</p>
+    <h2 class="section-heading">A few things I believe about therapy</h2>
+    <div class="philosophy-grid">
+      <div class="philosophy-item">
+        <div class="philosophy-item-title">Nothing about you is a mistake</div>
+        <div class="philosophy-item-desc">Every pattern, every protective response, every part of you that feels like a problem developed for a reason. Understanding that reason is the beginning of real change — not managing it, not replacing it, but actually understanding it.</div>
+      </div>
+      <div class="philosophy-item">
+        <div class="philosophy-item-title">Insight alone isn't enough</div>
+        <div class="philosophy-item-desc">Most of my clients already understand themselves well. The work isn't about acquiring more understanding — it's about creating the conditions where something can actually shift at a level beneath the intellect.</div>
+      </div>
+      <div class="philosophy-item">
+        <div class="philosophy-item-title">The relationship matters</div>
+        <div class="philosophy-item-desc">Therapeutic fit isn't a nice-to-have. Research consistently shows that the quality of the therapeutic relationship is one of the strongest predictors of outcome. I take that seriously, which is why I offer a consultation before we begin.</div>
+      </div>
+      <div class="philosophy-item">
+        <div class="philosophy-item-title">I keep doing my own work</div>
+        <div class="philosophy-item-desc">I stay in ongoing consultation and continue deepening my own relationship with this model. I believe therapists who stop growing have a limited ceiling — and I'm not interested in that ceiling.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Wellness NW</div>
+      <div class="footer-tagline">Rachelle Miller, LICSW &nbsp;·&nbsp; Spokane Valley, WA</div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/rates.html">Rates & insurance</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="footer-inner footer-copy">
+    <span>© 2025 Rachelle Miller, LICSW &nbsp;·&nbsp; rachelle@wellnessnw.com &nbsp;·&nbsp; Spokane Valley, WA 99206</span>
+    <span>This site is for informational purposes only and does not constitute a therapeutic relationship.</span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
+
+</body>
+</html>

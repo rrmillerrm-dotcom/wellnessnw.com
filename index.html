@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rachelle Miller, LICSW | IFS Therapist | Spokane Valley, WA</title>
+  <meta name="description" content="IFS therapy for sensitive, insightful, and high-functioning adults in Spokane Valley, WA and online. Rachelle Miller, LICSW, Certified IFS Therapist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f2efe8;
+      --cream-dark: #e8e4db;
+      --teal: #2e7d78;
+      --teal-dark: #1f5a56;
+      --teal-light: #4a9e99;
+      --text: #2c2c2a;
+      --text-muted: #6b6860;
+      --white: #fafaf8;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(242, 239, 232, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(44, 44, 42, 0.08);
+      padding: 0 2rem;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--teal-dark);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    .nav-cta {
+      font-size: 0.85rem !important;
+      font-weight: 500 !important;
+      color: var(--white) !important;
+      background: var(--teal);
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      text-transform: none !important;
+      letter-spacing: 0 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--teal-dark) !important; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text);
+      transition: all 0.25s;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 100px 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(46, 125, 120, 0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(46, 125, 120, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-botanical {
+      position: absolute;
+      right: -2%;
+      top: 10%;
+      width: min(420px, 38vw);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .hero-botanical-2 {
+      position: absolute;
+      left: -2%;
+      bottom: 5%;
+      width: min(260px, 22vw);
+      opacity: 0.10;
+      pointer-events: none;
+      transform: scaleX(-1) rotate(-20deg);
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 500;
+      line-height: 1.08;
+      color: var(--teal-dark);
+      max-width: 820px;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--teal);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 2.75rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.875rem 2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 400;
+      padding: 0.875rem 2rem;
+      border-radius: 100px;
+      border: 1px solid rgba(44,44,42,0.2);
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .btn-secondary:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
+
+    /* SECTION SHARED */
+    section { padding: 6rem 2rem; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      color: var(--teal-dark);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-intro {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    /* APPROACH */
+    .approach { background: var(--white); }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 4rem;
+    }
+
+    .approach-text p {
+      color: var(--text);
+      font-weight: 300;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+      font-size: 1.02rem;
+    }
+
+    .approach-text p:last-child { margin-bottom: 0; }
+
+    .approach-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .pillar {
+      border-left: 2px solid var(--teal-light);
+      padding-left: 1.5rem;
+    }
+
+    .pillar-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--teal-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .pillar-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.25rem 2rem;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid rgba(44,44,42,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(46,125,120,0.08);
+    }
+
+    .service-num {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--teal-light);
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+
+    .service-title {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: var(--teal-dark);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .service-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--teal);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .service-link::after { content: ' →'; }
+
+    /* QUOTE */
+    .quote-section {
+      background: var(--teal-dark);
+      padding: 5rem 2rem;
+    }
+
+    .quote-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .quote-mark {
+      font-family: var(--serif);
+      font-size: 5rem;
+      color: rgba(255,255,255,0.15);
+      line-height: 0.5;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .quote-text {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.5;
+    }
+
+    /* CTA */
+    .cta-section { text-align: center; }
+
+    .cta-inner {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .cta-section .section-heading { margin-bottom: 1rem; }
+
+    .cta-section .section-intro {
+      max-width: 100%;
+      margin: 0 auto 2.5rem;
+    }
+
+    .cta-section .btn-primary { font-size: 1rem; padding: 1rem 2.5rem; }
+
+    .cta-note {
+      margin-top: 1.25rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--cream-dark);
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(44,44,42,0.08);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--teal-dark);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--teal); }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(44,44,42,0.08);
+    }
+
+    /* BOTANICAL SVG */
+    .botanical-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        padding: 1.5rem 2rem;
+        gap: 1.25rem;
+        border-bottom: 1px solid rgba(44,44,42,0.08);
+        z-index: 99;
+      }
+      .nav-toggle { display: flex; }
+      .approach-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-botanical { width: 55vw; opacity: 0.12; }
+      .hero-botanical-2 { display: none; }
+      .footer-inner { flex-direction: column; gap: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 4rem 1.25rem; }
+      nav { padding: 0 1.25rem; }
+      .hero { padding: 90px 1.25rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Wellness NW</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/rates.html">Rates</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="https://rachellemiller.clientsecure.me" target="_blank" rel="noopener" class="nav-cta">Schedule a consultation</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <!-- Botanical line art SVG - fern/leaf -->
+  <svg class="hero-botanical" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M200 580 C200 580 200 100 200 40" stroke="#2e7d78" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M200 480 C170 440 100 420 60 390" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <path d="M200 460 C230 425 300 405 340 370" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <path d="M200 400 C165 355 85 340 40 310" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <path d="M200 380 C235 340 315 325 355 295" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <path d="M200 320 C160 275 75 260 30 228" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <path d="M200 300 C240 258 325 244 368 212" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <path d="M200 240 C155 195 65 180 18 146" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <path d="M200 220 C245 178 335 163 380 130" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <path d="M200 160 C158 118 82 100 48 70" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <path d="M200 145 C242 105 318 87 352 58" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <path d="M200 90 C180 65 155 50 138 35" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <path d="M200 85 C220 62 245 47 262 33" stroke="#2e7d78" stroke-width="1" stroke-linecap="round"/>
+    <!-- Leaf shapes along left branches -->
+    <ellipse cx="75" cy="402" rx="18" ry="9" transform="rotate(-25 75 402)" stroke="#2e7d78" stroke-width="0.75" fill="none"/>
+    <ellipse cx="45" cy="315" rx="16" ry="8" transform="rotate(-30 45 315)" stroke="#2e7d78" stroke-width="0.75" fill="none"/>
+    <ellipse cx="35" cy="230" rx="14" ry="7" transform="rotate(-28 35 230)" stroke="#2e7d78" stroke-width="0.75" fill="none"/>
+    <ellipse cx="28" cy="148" rx="13" ry="6" transform="rotate(-25 28 148)" stroke="#2e7d78" stroke-width="0.75" fill="none"/>
+    <!-- Leaf shapes along right branches -->
+    <ellipse cx="325" cy="382" rx="18" ry="9" transform="rotate(25 325 382)" stroke="#2e7d78" stroke-width="0.75" fill="none"/>
+    <ellipse cx="340" cy="298" rx="16" ry="8" transform="rotate(28 340 298)" stroke="#2e7d78" stroke-width="0.75" fill="none"/>
+    <ellipse cx="362" cy="214" rx="14" ry="7" transform="rotate(25 362 214)" stroke="#2e7d78" stroke-width="0.75" fill="none"/>
+    <ellipse cx="365" cy="132" rx="12" ry="6" transform="rotate(22 365 132)" stroke="#2e7d78" stroke-width="0.75" fill="none"/>
+  </svg>
+
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Rachelle Miller, LICSW &nbsp;·&nbsp; Certified IFS Therapist &nbsp;·&nbsp; Spokane Valley, WA</p>
+    <h1>Therapy for the<br>Insightful, the Sensitive,<br>and the <em>"Strong Ones."</em></h1>
+    <p class="hero-sub">You've spent a lifetime holding it all together. This is a space where you can finally set it down.</p>
+    <div class="hero-actions">
+      <a href="https://rachellemiller.clientsecure.me" target="_blank" rel="noopener" class="btn-primary">Schedule a consultation</a>
+      <a href="/about.html" class="btn-secondary">Learn more about me</a>
+    </div>
+  </div>
+</section>
+
+<section class="approach">
+  <div class="section-inner">
+    <p class="section-label">The approach</p>
+    <h2 class="section-heading">Therapy that goes<br>beneath the surface</h2>
+    <div class="approach-grid">
+      <div class="approach-text">
+        <p>Most of my clients have already done some version of "the work." They've read the books. They understand their patterns intellectually. And yet something remains stuck — some part that braces, or shuts down, or keeps them cycling through the same dynamics no matter how much insight they have.</p>
+        <p>That's where Internal Family Systems comes in. IFS doesn't ask you to manage your difficult parts or reason your way out of them. It works by creating a genuine relationship with them — one where even the most protective, reactive, or ashamed parts of you can finally be understood rather than overridden.</p>
+        <p>The result isn't a quieter version of your problems. It's something more like freedom.</p>
+        <a href="/about.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem;">About my approach</a>
+      </div>
+      <div class="approach-pillars">
+        <div class="pillar">
+          <div class="pillar-title">Internal Family Systems (IFS)</div>
+          <div class="pillar-desc">The foundation of my work. IFS is evidence-based, non-pathologizing, and among the most effective approaches available for trauma, anxiety, depression, and relational patterns. I'm a Level 3 trained, Certified IFS Therapist.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">EMDR</div>
+          <div class="pillar-desc">Integrated when appropriate for processing specific traumatic memories. EMDR and IFS work well together — EMDR helps reprocess stuck material while IFS provides the internal safety to do so.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Neuroaffirming care</div>
+          <div class="pillar-desc">I work with neurodivergent clients — particularly those with ADHD, autism, or high sensitivity — and have developed particular fluency with the ways standard approaches can miss the mark for people whose minds work differently. Neurology is not the problem we're solving.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Somatic awareness</div>
+          <div class="pillar-desc">The body holds what the mind can't fully articulate. Our work includes attention to what you notice physically — where you feel tension, contraction, or ease — as part of the healing process.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <p class="section-label">Services</p>
+    <h2 class="section-heading">Who I work with</h2>
+    <p class="section-intro">I see adults, couples, and teens in Spokane Valley and online throughout Washington State. My practice is private pay only.</p>
+    <div class="services-grid">
+      <a href="/individual.html" class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-title">Individual Therapy</div>
+        <div class="service-desc">For adults navigating trauma, burnout, family-of-origin wounds, identity, grief, and the particular exhaustion that comes from being the one who always holds it together.</div>
+        <span class="service-link">Learn more</span>
+      </a>
+      <a href="/couples.html" class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-title">Couples Therapy</div>
+        <div class="service-desc">For partners who want to understand the patterns between them — not just stop fighting, but genuinely build something more honest and connected.</div>
+        <span class="service-link">Learn more</span>
+      </a>
+      <a href="/teens.html" class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-title">Teen Therapy</div>
+        <div class="service-desc">For tweens, teens, and young adults — particularly those who are neurodivergent, highly sensitive, or struggling with the weight of a world that doesn't always make room for how they're wired.</div>
+        <span class="service-link">Learn more</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="quote-section">
+  <div class="quote-inner">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">The goal of IFS isn't to silence the difficult parts of you. It's to understand what they've been carrying — and help them put it down.</p>
+  </div>
+</div>
+
+<section class="cta-section">
+  <div class="section-inner">
+    <div class="cta-inner">
+      <p class="section-label">Get started</p>
+      <h2 class="section-heading">Ready to begin?</h2>
+      <p class="section-intro">I offer a free 20-minute consultation to see if we're a good fit. There's no pressure and no commitment. Just a conversation.</p>
+      <a href="https://rachellemiller.clientsecure.me" target="_blank" rel="noopener" class="btn-primary">Schedule a free consultation</a>
+      <p class="cta-note">Currently not accepting new clients. Check back or <a href="/contact.html" style="color: var(--teal);">send a message</a> to be added to the waitlist.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Wellness NW</div>
+      <div class="footer-tagline">Rachelle Miller, LICSW &nbsp;·&nbsp; Spokane Valley, WA</div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/rates.html">Rates & insurance</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="footer-inner footer-copy">
+    <span>© 2025 Rachelle Miller, LICSW &nbsp;·&nbsp; rachelle@wellnessnw.com &nbsp;·&nbsp; Spokane Valley, WA 99206</span>
+    <span>This site is for informational purposes only and does not constitute a therapeutic relationship.</span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
+
+</body>
+</html>

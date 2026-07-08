@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources | Rachelle Miller, LICSW | Wellness NW</title>
+  <meta name="description" content="Crisis support, therapist directories, and additional mental health resources curated by Rachelle Miller, LICSW." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f2efe8; --cream-dark: #e8e4db; --teal: #2e7d78;
+      --teal-dark: #1f5a56; --teal-light: #4a9e99; --text: #2c2c2a;
+      --text-muted: #6b6860; --white: #fafaf8;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--text); font-size: 16px; line-height: 1.7; }
+
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(242,239,232,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(44,44,42,0.08); padding: 0 2rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--teal-dark); text-decoration: none; }
+    .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.85rem; font-weight: 400; color: var(--text-muted); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { font-size: 0.85rem !important; font-weight: 500 !important; color: var(--white) !important; background: var(--teal); padding: 0.5rem 1.25rem; border-radius: 100px; text-transform: none !important; letter-spacing: 0 !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--teal-dark) !important; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--text); }
+
+    .page-header { padding: 140px 2rem 5rem; background: var(--white); border-bottom: 1px solid rgba(44,44,42,0.06); }
+    .page-header-inner { max-width: 1100px; margin: 0 auto; }
+    .page-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .page-header h1 { font-family: var(--serif); font-size: clamp(2.5rem,5vw,4rem); font-weight: 500; color: var(--teal-dark); line-height: 1.1; max-width: 700px; }
+    .page-header-sub { font-size: 1.05rem; font-weight: 300; color: var(--text-muted); max-width: 540px; margin-top: 1.5rem; line-height: 1.8; }
+
+    /* CRISIS BANNER */
+    .crisis-banner { background: var(--teal-dark); padding: 3rem 2rem; }
+    .crisis-banner-inner { max-width: 1100px; margin: 0 auto; }
+    .crisis-banner-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
+    .crisis-banner-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; color: rgba(255,255,255,0.95); margin-bottom: 0.5rem; }
+    .crisis-banner-note { font-size: 0.88rem; font-weight: 300; color: rgba(255,255,255,0.65); margin-bottom: 2rem; line-height: 1.6; }
+    .crisis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .crisis-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 1.5rem; }
+    .crisis-card-title { font-size: 0.95rem; font-weight: 500; color: rgba(255,255,255,0.95); margin-bottom: 0.4rem; }
+    .crisis-card-desc { font-size: 0.82rem; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 1rem; }
+    .crisis-link { display: inline-block; font-size: 0.82rem; font-weight: 500; color: var(--white); border: 1px solid rgba(255,255,255,0.35); border-radius: 100px; padding: 0.4rem 1rem; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+    .crisis-link:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.6); }
+
+    /* RESOURCE SECTIONS */
+    .resources-section { padding: 5rem 2rem; }
+    .resources-inner { max-width: 1100px; margin: 0 auto; }
+
+    .resource-group { margin-bottom: 4rem; }
+    .resource-group:last-child { margin-bottom: 0; }
+    .resource-group-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.5rem; }
+
+    .resource-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+
+    .resource-card { background: var(--white); border-radius: 14px; padding: 1.75rem; border: 1px solid rgba(44,44,42,0.06); display: flex; flex-direction: column; gap: 0.5rem; }
+    .resource-card-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: var(--teal-dark); }
+    .resource-card-desc { font-size: 0.88rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; flex: 1; }
+    .resource-card-link { display: inline-block; margin-top: 0.5rem; font-size: 0.82rem; font-weight: 500; color: var(--teal); text-decoration: none; }
+    .resource-card-link::after { content: ' →'; }
+    .resource-card-link:hover { color: var(--teal-dark); }
+
+    footer { background: var(--cream-dark); padding: 3rem 2rem; border-top: 1px solid rgba(44,44,42,0.08); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+    .footer-brand { font-family: var(--serif); font-size: 1.1rem; color: var(--teal-dark); font-weight: 500; margin-bottom: 0.5rem; }
+    .footer-tagline { font-size: 0.82rem; color: var(--text-muted); font-weight: 300; }
+    .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal); }
+    .footer-copy { font-size: 0.78rem; color: var(--text-muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(44,44,42,0.08); }
+
+    @media (max-width: 768px) {
+      .crisis-grid { grid-template-columns: 1fr; }
+      .resource-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--cream); padding: 1.5rem 2rem; gap: 1.25rem; border-bottom: 1px solid rgba(44,44,42,0.08); z-index: 99; }
+      .nav-toggle { display: flex; }
+      .footer-inner { flex-direction: column; gap: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .page-header { padding: 120px 1.25rem 3rem; }
+      .resources-section { padding: 3.5rem 1.25rem; }
+      .crisis-banner { padding: 2.5rem 1.25rem; }
+      nav { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo">Wellness NW</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/individual.html">Individual therapy</a></li>
+      <li><a href="/training.html">Speaking & training</a></li>
+      <li><a href="/rates.html">Rates</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="https://rachellemiller.clientsecure.me" target="_blank" rel="noopener" class="nav-cta">Schedule a consultation</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-label">Resources</p>
+    <h1>Support outside the therapy room.</h1>
+    <p class="page-header-sub">A curated list of crisis lines, therapist directories, and additional resources. If you're not sure where to start, feel free to reach out.</p>
+  </div>
+</div>
+
+<div class="crisis-banner">
+  <div class="crisis-banner-inner">
+    <div class="crisis-banner-label">Crisis support — available 24/7</div>
+    <div class="crisis-banner-title">If you're in crisis, please reach out now.</div>
+    <div class="crisis-banner-note">These lines are free, confidential, and available around the clock.</div>
+    <div class="crisis-grid">
+      <div class="crisis-card">
+        <div class="crisis-card-title">988 Suicide & Crisis Lifeline</div>
+        <div class="crisis-card-desc">Free and confidential support for people in distress, plus prevention and crisis resources.</div>
+        <a href="https://988lifeline.org/" target="_blank" rel="noopener" class="crisis-link">Call or text 988</a>
+      </div>
+      <div class="crisis-card">
+        <div class="crisis-card-title">Crisis Text Line</div>
+        <div class="crisis-card-desc">Text with a trained Crisis Counselor from anywhere in the US, any time of day.</div>
+        <a href="https://www.crisistextline.org/" target="_blank" rel="noopener" class="crisis-link">Text HOME to 741741</a>
+      </div>
+      <div class="crisis-card">
+        <div class="crisis-card-title">National DV Hotline</div>
+        <div class="crisis-card-desc">24/7 confidential support for people experiencing domestic violence.</div>
+        <a href="https://www.thehotline.org/" target="_blank" rel="noopener" class="crisis-link">Call 800-799-SAFE</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="resources-section">
+  <div class="resources-inner">
+
+    <div class="resource-group">
+      <div class="resource-group-label">Find a therapist</div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-card-title">IFS Institute Directory</div>
+          <div class="resource-card-desc">Find certified IFS therapists and practitioners, and learn more about the Internal Family Systems model.</div>
+          <a href="https://ifs-institute.com/practitioners" target="_blank" rel="noopener" class="resource-card-link">Visit website</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-title">Neurodivergent Therapists</div>
+          <div class="resource-card-desc">A directory run by neurodivergent therapists, focused on affirming care rooted in lived experience.</div>
+          <a href="https://ndtherapists.com/" target="_blank" rel="noopener" class="resource-card-link">Visit website</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-title">TherapyDen</div>
+          <div class="resource-card-desc">A modern therapist directory with inclusive search filters for identity, specialty, and approach.</div>
+          <a href="https://www.therapyden.com/" target="_blank" rel="noopener" class="resource-card-link">Visit website</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-title">Psychology Today</div>
+          <div class="resource-card-desc">A widely used directory for finding licensed therapists by location, specialty, and insurance.</div>
+          <a href="https://www.psychologytoday.com/" target="_blank" rel="noopener" class="resource-card-link">Visit website</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="resource-group">
+      <div class="resource-group-label">Additional support</div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-card-title">NAMI</div>
+          <div class="resource-card-desc">The National Alliance on Mental Illness offers education, advocacy, and peer support groups nationwide.</div>
+          <a href="https://www.nami.org/" target="_blank" rel="noopener" class="resource-card-link">Visit website</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-title">Now Matters Now</div>
+          <div class="resource-card-desc">Skills and support for coping with suicidal thoughts and intense emotions, grounded in DBT.</div>
+          <a href="https://www.nowmattersnow.org/" target="_blank" rel="noopener" class="resource-card-link">Visit website</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-title">WA Warm Line</div>
+          <div class="resource-card-desc">Peer emotional support for people in Washington living with mental health challenges — not a crisis line, but a place to talk.</div>
+          <a href="https://www.crisisconnections.org/wa-warm-line" target="_blank" rel="noopener" class="resource-card-link">Visit website</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Wellness NW</div>
+      <div class="footer-tagline">Rachelle Miller, LICSW &nbsp;·&nbsp; Spokane Valley, WA</div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/about.html">About</a>
+      <a href="/individual.html">Individual therapy</a>
+      <a href="/training.html">Speaking & training</a>
+      <a href="/rates.html">Rates & fees</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="footer-inner footer-copy">
+    <span>© 2025 Rachelle Miller, LICSW &nbsp;·&nbsp; rachelle@wellnessnw.com &nbsp;·&nbsp; Spokane Valley, WA 99206</span>
+    <span>This site is for informational purposes only and does not constitute a therapeutic relationship.</span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
+
+</body>
+</html>

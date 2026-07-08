@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Rachelle Miller, LICSW | Wellness NW</title>
+  <meta name="description" content="Frequently asked questions about therapy, fees, confidentiality, and what to expect working with Rachelle Miller, LICSW." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f2efe8; --cream-dark: #e8e4db; --teal: #2e7d78;
+      --teal-dark: #1f5a56; --teal-light: #4a9e99; --text: #2c2c2a;
+      --text-muted: #6b6860; --white: #fafaf8;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--text); font-size: 16px; line-height: 1.7; }
+
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(242,239,232,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(44,44,42,0.08); padding: 0 2rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--teal-dark); text-decoration: none; }
+    .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.85rem; font-weight: 400; color: var(--text-muted); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { font-size: 0.85rem !important; font-weight: 500 !important; color: var(--white) !important; background: var(--teal); padding: 0.5rem 1.25rem; border-radius: 100px; text-transform: none !important; letter-spacing: 0 !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--teal-dark) !important; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--text); }
+
+    .page-header { padding: 140px 2rem 5rem; background: var(--white); border-bottom: 1px solid rgba(44,44,42,0.06); }
+    .page-header-inner { max-width: 760px; margin: 0 auto; }
+    .page-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .page-header h1 { font-family: var(--serif); font-size: clamp(2.5rem,5vw,4rem); font-weight: 500; color: var(--teal-dark); line-height: 1.1; }
+    .page-header-sub { font-size: 1.05rem; font-weight: 300; color: var(--text-muted); margin-top: 1.25rem; line-height: 1.8; }
+
+    .faq-section { padding: 5rem 2rem; }
+    .faq-inner { max-width: 760px; margin: 0 auto; }
+
+    .faq-group { margin-bottom: 3.5rem; }
+    .faq-group-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.25rem; }
+
+    .accordion-item {
+      border-bottom: 1px solid rgba(44,44,42,0.1);
+    }
+
+    .accordion-item:first-of-type { border-top: 1px solid rgba(44,44,42,0.1); }
+
+    .accordion-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.25rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .accordion-trigger-text {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--teal-dark);
+      line-height: 1.3;
+    }
+
+    .accordion-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid rgba(44,44,42,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s, background 0.2s, border-color 0.2s;
+    }
+
+    .accordion-icon svg {
+      width: 10px;
+      height: 10px;
+      stroke: var(--teal);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      transition: transform 0.25s;
+    }
+
+    .accordion-trigger[aria-expanded="true"] .accordion-icon {
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+
+    .accordion-trigger[aria-expanded="true"] .accordion-icon svg {
+      stroke: white;
+      transform: rotate(45deg);
+    }
+
+    .accordion-body {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+    }
+
+    .accordion-body-inner {
+      padding: 0 0 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    .accordion-body-inner p { margin-bottom: 0.85rem; }
+    .accordion-body-inner p:last-child { margin-bottom: 0; }
+
+    .accordion-body-inner ul {
+      list-style: none;
+      margin: 0.5rem 0 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .accordion-body-inner ul li {
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .accordion-body-inner ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--teal-light);
+    }
+
+    footer { background: var(--cream-dark); padding: 3rem 2rem; border-top: 1px solid rgba(44,44,42,0.08); margin-top: 2rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+    .footer-brand { font-family: var(--serif); font-size: 1.1rem; color: var(--teal-dark); font-weight: 500; margin-bottom: 0.5rem; }
+    .footer-tagline { font-size: 0.82rem; color: var(--text-muted); font-weight: 300; }
+    .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal); }
+    .footer-copy { font-size: 0.78rem; color: var(--text-muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(44,44,42,0.08); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--cream); padding: 1.5rem 2rem; gap: 1.25rem; border-bottom: 1px solid rgba(44,44,42,0.08); z-index: 99; }
+      .nav-toggle { display: flex; }
+      .footer-inner { flex-direction: column; gap: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .page-header { padding: 120px 1.25rem 3rem; }
+      .faq-section { padding: 3.5rem 1.25rem; }
+      nav { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo">Wellness NW</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/individual.html">Individual therapy</a></li>
+      <li><a href="/training.html">Speaking & training</a></li>
+      <li><a href="/rates.html">Rates</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="https://rachellemiller.clientsecure.me" target="_blank" rel="noopener" class="nav-cta">Schedule a consultation</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-label">FAQ</p>
+    <h1>Questions people ask before getting started.</h1>
+    <p class="page-header-sub">If something isn't answered here, you're welcome to ask directly — that's what the consultation is for.</p>
+  </div>
+</div>
+
+<section class="faq-section">
+  <div class="faq-inner">
+
+    <div class="faq-group">
+      <div class="faq-group-label">The work</div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-trigger-text">How does your approach to therapy work?</span>
+          <span class="accordion-icon">
+            <svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>My approach is relational, neuroaffirming, and rooted in Internal Family Systems (IFS). I don't believe in "fixing" you because I don't believe you are broken.</p>
+            <p>Instead, we work together to understand the different parts of you — the parts that strive, the parts that protect, and the parts that hurt. By building a relationship with these internal parts, we can unburden the pain they carry and help you lead from a place of calm and confidence.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-trigger-text">About how long will it take?</span>
+          <span class="accordion-icon">
+            <svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>The answer depends on what you're bringing in, your goals, and how the work unfolds. There is no set timeline for healing. Some clients find meaningful relief in a few months; others choose to engage in longer-term work to address deeper patterns.</p>
+            <p>We check in regularly on your goals and progress to make sure our work together continues to feel worthwhile to you.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-trigger-text">What will I notice when things are getting better?</span>
+          <span class="accordion-icon">
+            <svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>Symptoms tend to change in frequency, duration, and intensity before they disappear entirely. You'll likely notice increased self-confidence, more access to your own steadiness, and a consistent softening of anxiety or depression over time.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-trigger-text">What if I feel like therapy isn't working?</span>
+          <span class="accordion-icon">
+            <svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>Tell me. That conversation is part of the work, not a threat to it. We may need to adjust our approach, revisit our goals, or increase the frequency of sessions. If we're genuinely not making progress, I'll consult with colleagues and may suggest you see another therapist for a fresh perspective.</p>
+            <p>I take on clients I believe I can help, and I have an ethical obligation to refer those who aren't benefiting from our work together.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-trigger-text">Do you follow a structured therapy model?</span>
+          <span class="accordion-icon">
+            <svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>Yes. Both IFS and EMDR — the primary models I work from — include structured, evidence-based steps. I adapt them to fit each individual client rather than applying them rigidly, but there's real methodology underneath the work.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-trigger-text">What about other therapy approaches?</span>
+          <span class="accordion-icon">
+            <svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>There are many effective therapy modalities — CBT, DBT, ACT, and others. I have training in several approaches, but IFS is my primary framework. If you're specifically looking for one of these other modalities as your main treatment approach, I may not be the right fit, and I'm happy to provide referrals to therapists who work that way.</p>
+            <p>Other kinds of support — psychiatry, medication evaluation, support groups, community mental health services, DV resources — can also be part of the picture. As a social worker, I think about you as a whole person in your environment, and I'm glad to connect you with additional resources when that's helpful.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-label">Getting started</div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-trigger-text">Will I need to fill anything out before we begin?</span>
+          <span class="accordion-icon">
+            <svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>Before your first session, you'll receive a link to my client portal. You'll be asked to complete basic demographic information, a brief history, and your treatment goals. There may also be brief symptom checklists, which help us track progress over time.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-trigger-text">How are appointments scheduled?</span>
+          <span class="accordion-icon">
+            <svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>Sessions are typically scheduled on a weekly or biweekly recurring basis. Sessions run 45-55 minutes. Extended or more frequent sessions are available on a case-by-case basis when the work calls for it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-trigger-text">Can you prescribe medication?</span>
+          <span class="accordion-icon">
+            <svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>No. As a Licensed Clinical Social Worker, I cannot prescribe medication. If I think a medication evaluation might be helpful, I'll provide referrals to prescribers and collaborate with them when you give consent to do so.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-label">Privacy & payment</div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-trigger-text">What about confidentiality?</span>
+          <span class="accordion-icon">
+            <svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>I am ethically and legally obligated to keep records of your treatment, which typically include a diagnosis, treatment plan, symptoms, interventions, safety concerns, and progress.</p>
+            <p>If you use a superbill for out-of-network reimbursement, the information shared with your insurance company includes your diagnosis, date of service, and session length. Insurance plans may also request progress notes or treatment summaries.</p>
+            <p>There are legal limits to confidentiality. I am required to break confidentiality in the following situations:</p>
+            <ul>
+              <li>If I believe you are in imminent danger of harming yourself or someone else</li>
+              <li>If I suspect abuse or neglect of a child, elderly person, or vulnerable adult</li>
+              <li>If I am ordered by a court of law to release records</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-trigger-text">What are the fees and how does payment work?</span>
+          <span class="accordion-icon">
+            <svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>My fee is $220 per 45-55 minute session. I am an out-of-network provider and do not bill insurance directly.</p>
+            <p>I can provide a monthly superbill that you can submit to your insurance company for potential out-of-network reimbursement. I recommend calling your insurance provider to ask about your out-of-network mental health benefits before we begin.</p>
+            <p>Payment is due at the time of service. I accept HSA/FSA cards and all major credit cards. See the <a href="/rates.html">rates page</a> for full details including the cancellation policy.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Wellness NW</div>
+      <div class="footer-tagline">Rachelle Miller, LICSW &nbsp;·&nbsp; Spokane Valley, WA</div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/about.html">About</a>
+      <a href="/individual.html">Individual therapy</a>
+      <a href="/training.html">Speaking & training</a>
+      <a href="/rates.html">Rates & fees</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="footer-inner footer-copy">
+    <span>© 2025 Rachelle Miller, LICSW &nbsp;·&nbsp; rachelle@wellnessnw.com &nbsp;·&nbsp; Spokane Valley, WA 99206</span>
+    <span>This site is for informational purposes only and does not constitute a therapeutic relationship.</span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+  document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const expanded = trigger.getAttribute('aria-expanded') === 'true';
+      const body = trigger.nextElementSibling;
+
+      // Close all others
+      document.querySelectorAll('.accordion-trigger').forEach(t => {
+        t.setAttribute('aria-expanded', 'false');
+        t.nextElementSibling.style.maxHeight = null;
+      });
+
+      // Open this one if it was closed
+      if (!expanded) {
+        trigger.setAttribute('aria-expanded', 'true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
