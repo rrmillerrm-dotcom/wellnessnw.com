@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -228,6 +229,16 @@
       background: var(--teal-light);
     }
 
+
+    .about-photo {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+      filter: saturate(0.9);
+      margin-bottom: 1.5rem;
+    }
     .sidebar-cta {
       background: var(--teal-dark);
       border-radius: 16px;
@@ -413,7 +424,7 @@
       <li><a href="/services.html">Services</a></li>
       <li><a href="/rates.html">Rates</a></li>
       <li><a href="/faq.html">FAQ</a></li>
-      <li><a href="https://rachellemiller.clientsecure.me" target="_blank" rel="noopener" class="nav-cta">Schedule a consultation</a></li>
+      <li><a href="https://rachelle-miller.clientsecure.me" target="_blank" rel="noopener" class="nav-cta">Schedule a consultation</a></li>
     </ul>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
@@ -453,6 +464,7 @@
     </div>
 
     <aside class="about-sidebar">
+      <img src="/headshot.png" alt="Rachelle Miller, LICSW" class="about-photo" />
       <div class="sidebar-card">
         <div class="sidebar-card-title">Credentials & training</div>
         <ul class="credential-list">
@@ -482,7 +494,7 @@
 
       <div class="sidebar-cta">
         <p>Free 20-minute consultation to see if we're a good fit.</p>
-        <a href="https://rachellemiller.clientsecure.me" target="_blank" rel="noopener" class="btn-primary">Schedule a consultation</a>
+        <a href="https://rachelle-miller.clientsecure.me" target="_blank" rel="noopener" class="btn-primary">Schedule a consultation</a>
       </div>
     </aside>
   </div>
